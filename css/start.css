@@ -24,3 +24,28 @@
 .start__col {
   text-align: center;
 }
+
+/* Слайдер */
+/* Слайдер - Стрелки */
+.swiper-button-prev {
+  color: #000;
+}
+.swiper-button-next {
+  color: #000;
+}
+/* Слайдер - Пагинация */
+.swiper-pagination-bullet {
+  opacity: 0.3;
+  background-color: #000;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* Преимущества */
+.start__features {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
