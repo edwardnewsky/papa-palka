@@ -1,10 +1,9 @@
 /* MAIN */
-.d-flex--center {
-  display: flex;
-  justify-content: center;
+.start {
+  padding-top: 60px;
 }
 
-.button {
+.btn {
   background-color: #000;
   color: #fff;
   border: none;
@@ -12,61 +11,29 @@
   text-transform: uppercase;
 }
 
-/* HEADER */
-.header {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background-color: #000;
-}
+/* UTILITES */
 
-.header__row {
+.d-flex--center {
   display: flex;
-  align-items: center;
-}
-
-.header__list-col {
-  display: inherit;
   justify-content: center;
 }
 
-.header__list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  color: #fff;
-  text-transform: uppercase;
+.row--padding {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-.header__button-col {
-  display: inherit;
-  justify-content: flex-end;
+.container--padding {
+  padding-left: 0;
+  padding-right: 0;
 }
 
-/* START */
-.start {
-  position: relative;
-  min-height: 100%;
-}
-
-.fluid-bbc {
-  background-color: #fff000;
-}
-
-.fluid-papa {
-  background-color: #f38830;
-}
-
-.fluid-bbc,
-.fluid-papa {
-  height: 100vh;
-}
-
-.start__fix {
+.visually-hidden {
   position: absolute;
-}
-
-.start__col {
-  text-align: center;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
 }
 
 /* delete pls */

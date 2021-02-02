@@ -1,0 +1,62 @@
+/* HEADER */
+.header {
+  position: fixed;
+  z-index: 100;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #000;
+}
+
+.header__row {
+  display: flex;
+  align-items: center;
+}
+/* Язык */
+.header__col-lang {
+  display: inherit;
+}
+
+.header__lang-text {
+  color: #fff;
+  padding: 0 5px;
+}
+
+.btn__lang {
+  padding: 0;
+}
+
+/* Навигация */
+.header__nav {
+  display: inherit;
+  justify-content: center;
+}
+
+.btn__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__icon-arrow-down {
+  margin-left: 5px;
+}
+
+.header__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Чат */
+.header__col-btn {
+  display: inherit;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.btn__chat {
+  padding: 0;
+  background-color: transparent;
+}

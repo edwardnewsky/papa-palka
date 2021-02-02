@@ -1,0 +1,26 @@
+/* START */
+.start {
+  position: relative;
+  min-height: 100%;
+}
+
+.fluid-bbc {
+  background-color: #fff000;
+}
+
+.fluid-papa {
+  background-color: #f38830;
+}
+
+.fluid-bbc,
+.fluid-papa {
+  height: 100vh;
+}
+
+.start__fix {
+  position: absolute;
+}
+
+.start__col {
+  text-align: center;
+}
