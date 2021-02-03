@@ -50,7 +50,7 @@
 .title-h4 {
   font-size: 15px;
 }
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 768px) {
   .title-h4 {
     font-size: 18px;
   }
@@ -121,21 +121,21 @@
 /* Responsive */
 
 /* Responsive - Iphone 6/7/8 + X */
-@media screen and (min-width: 375px) {
-}
+/* @media screen and (min-width: 375px) {
+} */
 
 /* Responsive - Iphone 6/7/8 Plus */
-@media screen and (min-width: 414px) {
-}
+/* @media screen and (min-width: 414px) {
+} */
 
 /* Responsive - Ipad */
-@media screen and (min-width: 768px) {
-}
+/* @media screen and (min-width: 768px) {
+} */
 
 /* Responsive - Ipad Pro */
-@media screen and (min-width: 992px) {
-}
+/* @media screen and (min-width: 992px) {
+} */
 
 /* Responsive - Desktop */
-@media screen and (min-width: 1200px) {
-}
+/* @media screen and (min-width: 1200px) {
+} */
