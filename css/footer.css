@@ -1,0 +1,20 @@
+.footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #000;
+}
+
+.footer__row {
+  display: flex;
+  align-items: center;
+}
+
+.footer__col--bbc {
+  display: inherit;
+  justify-content: flex-start;
+}
+
+.footer__col--papa {
+  display: inherit;
+  justify-content: flex-end;
+}
