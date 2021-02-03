@@ -32,6 +32,12 @@
     height: 75px;
   }
 }
+@media screen and (min-width: 992px) {
+  .start__logo {
+    width: 100px;
+    height: 100px;
+  }
+}
 
 /* Слайдер */
 /* Слайдер - Картинки  */
@@ -71,8 +77,20 @@
 }
 
 @media screen and (min-width: 375px) {
+  .start__features {
+    margin-bottom: 5px;
+  }
   .start__features-icon {
     height: 40px;
     width: 40px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .start__features {
+    margin-bottom: 15px;
+  }
+  .start__features-icon {
+    height: 50px;
+    width: 50px;
   }
 }

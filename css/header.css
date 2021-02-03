@@ -7,6 +7,11 @@
   background-color: #000;
 }
 
+.header__container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .header__row {
   display: flex;
   align-items: center;
@@ -60,7 +65,16 @@
   padding: 0;
 }
 
-.btn__chat title,
-.title-emoji {
+.btn__chat .title-emoji {
   font-size: 23px;
+}
+@media screen and (min-width: 414px) {
+  .btn__chat .title-emoji {
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .btn__chat .title-emoji {
+    font-size: 30px;
+  }
 }
