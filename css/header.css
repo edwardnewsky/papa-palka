@@ -46,12 +46,28 @@
 }
 
 .header__list {
-  padding: 0;
-  margin: 0;
   list-style: none;
   color: #fff;
   text-transform: uppercase;
   text-align: center;
+  position: absolute;
+  background-color: #000;
+  width: 100%;
+  margin-top: 40px;
+  padding: 30px;
+}
+
+.header__list-item {
+  opacity: 0.5;
+  padding: 10px;
+}
+
+.header__list-item:hover {
+  opacity: 1;
+}
+
+.header__list-item:active {
+  opacity: 1;
 }
 
 /* Чат */
