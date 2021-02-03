@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="/css/header.css" />
     <!-- START CSS -->
     <link rel="stylesheet" href="/css/start.css" />
+    <!-- PHOTO CSS -->
+    <link rel="stylesheet" href="/css/photo.css" />
+    <!-- ACCORDION CSS -->
+    <link rel="stylesheet" href="/css/accordion.css" />
   </head>
   <body>
     <!-- HEADER -->
@@ -23,9 +27,7 @@
         <h1 class="visually-hidden">Багажник для велосипеда</h1>
         <!-- Язык -->
         <div class="col-3 header__col-lang">
-          <button class="btn btn__lang">RU</button>
-          <span class="header__lang-text">/</span>
-          <button class="btn btn__lang">EN</button>
+          <button class="btn btn__lang">RU / EN</button>
           <!-- <a
             href="https://www.instagram.com/brokenbikes.club/"
             class="header__logo-link header__logo-link--bbc d-none"
@@ -297,19 +299,22 @@
               <!-- Фото ББС -->
               <img
                 class="test__img"
-                src="/img/test.jpg"
+                src="/img/photo__bbc.jpg"
                 alt=""
-                width="200px"
-                height="200px"
+                width="296px"
+                height="197.5px"
               />
               <!-- Заголовок ББС -->
-              <h3 class="title-h3">BrokenBikes.Club</h3>
+              <a
+                href="https://www.instagram.com/brokenbikes.club/"
+                class="author-link"
+                target="_blank"
+                ><h3 class="title-h3">BrokenBikes.Club</h3></a
+              >
               <!-- Описание ББС -->
               <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                recusandae repellat nam molestias. Itaque, at! Voluptatem
-                necessitatibus, culpa nostrum harum ipsam illo dolor expedita,
-                itaque dolore quasi nulla minus! Fuga!
+                Велоклуб из Москвы, состоящий из компании друзей, созданный в
+                2018 году. Делаем красиво и только то, что считаем нужным.
               </p>
             </div>
             <!-- ПАПА -->
@@ -323,7 +328,12 @@
                 height="200px"
               />
               <!-- Заголовок ПАПА -->
-              <h3 class="title-h3">Папа палка</h3>
+              <a
+                href="https://www.instagram.com/papa_palka/"
+                class="author-link"
+                target="_blank"
+                ><h3 class="title-h3">Папа палка</h3></a
+              >
               <!-- Описание ПАПА -->
               <p class="text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
@@ -337,110 +347,187 @@
       </section>
       <!-- О НАС -->
 
-      <section class="create">
+      <!-- ФОТО -->
+      <section class="photo row--padding">
         <div class="container">
           <div class="row">
-            <div class="col-12">
-              <h2 class="title">Производство</h2>
+            <!-- Заголовок -->
+            <div class="col-12 title__col">
+              <h2 class="title-h2">Фото</h2>
+              <span class="title-emoji">📸📹🎞️🚴</span>
             </div>
           </div>
-          <div class="row">
+          <!-- Фото блок -->
+          <div class="col-12 row--padding">
+            <!-- Фото 1 -->
             <div class="col-12 col-md-4">
               <img
-                class="test__img"
+                class="photo__img"
                 src="/img/test.jpg"
                 alt=""
-                srcset=""
-                width="200px"
-                height="200px"
+                width="296px"
+                height="197.5px"
               />
             </div>
+            <!-- Фото 2 -->
             <div class="col-12 col-md-4">
               <img
-                class="test__img"
+                class="photo__img"
                 src="/img/test.jpg"
                 alt=""
-                srcset=""
-                width="200px"
-                height="200px"
+                width="296px"
+                height="197.5px"
               />
             </div>
+            <!-- Фото 3 -->
             <div class="col-12 col-md-4">
               <img
-                class="test__img"
+                class="photo__img"
                 src="/img/test.jpg"
                 alt=""
-                srcset=""
-                width="200px"
-                height="200px"
+                width="296px"
+                height="197.5px"
               />
             </div>
-            <div class="col-12">
-              <h3 class="title">О Производстве</h3>
-              <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                recusandae repellat nam molestias. Itaque, at! Voluptatem
-                necessitatibus, culpa nostrum harum ipsam illo dolor expedita,
-                itaque dolore quasi nulla minus! Fuga!
-              </p>
+            <!-- Фото 4 -->
+            <div class="col-12 col-md-4">
+              <img
+                class="photo__img"
+                src="/img/test.jpg"
+                alt=""
+                width="296px"
+                height="197.5px"
+              />
+            </div>
+            <!-- Фото 5 -->
+            <div class="col-12 col-md-4">
+              <img
+                class="photo__img"
+                src="/img/test.jpg"
+                alt=""
+                width="296px"
+                height="197.5px"
+              />
+            </div>
+            <!-- Фото 6 -->
+            <div class="col-12 col-md-4">
+              <img
+                class="photo__img"
+                src="/img/test.jpg"
+                alt=""
+                width="296px"
+                height="197.5px"
+              />
+            </div>
+            <!-- Фото 7 -->
+            <div class="col-12 col-md-4">
+              <img
+                class="photo__img"
+                src="/img/test.jpg"
+                alt=""
+                width="296px"
+                height="197.5px"
+              />
+            </div>
+            <!-- Фото 8 -->
+            <div class="col-12 col-md-4">
+              <img
+                class="photo__img"
+                src="/img/test.jpg"
+                alt=""
+                width="296px"
+                height="197.5px"
+              />
+            </div>
+            <!-- Фото 9 -->
+            <div class="col-12 col-md-4">
+              <img
+                class="photo__img"
+                src="/img/test.jpg"
+                alt=""
+                width="296px"
+                height="197.5px"
+              />
             </div>
           </div>
         </div>
       </section>
+      <!-- ФОТО -->
 
-      <section class="prod">
+      <!-- FAQ -->
+      <section class="faq row--padding">
         <div class="container">
           <div class="row">
-            <div class="col-12">
-              <h2 class="title">Производство</h2>
+            <!-- Заголовок -->
+            <div class="col-12 title__col">
+              <h2 class="title-h2">FAQ</h2>
+              <span class="title-emoji">⁉️📚🧭🧐</span>
             </div>
           </div>
-          <div class="row">
-            <div class="col-12 col-md-4">
-              <img
-                class="test__img"
-                src="/img/test.jpg"
-                alt=""
-                srcset=""
-                width="200px"
-                height="200px"
-              />
-            </div>
-            <div class="col-12 col-md-4">
-              <img
-                class="test__img"
-                src="/img/test.jpg"
-                alt=""
-                srcset=""
-                width="200px"
-                height="200px"
-              />
-            </div>
-            <div class="col-12 col-md-4">
-              <img
-                class="test__img"
-                src="/img/test.jpg"
-                alt=""
-                srcset=""
-                width="200px"
-                height="200px"
-              />
-            </div>
-            <div class="col-12">
-              <h3 class="title">О Производстве</h3>
+          <!-- Аккордион блок -->
+          <div class="col-12 row--padding">
+            <button class="accordion">
+              Как купить, кому платить, где заказывать?
+            </button>
+            <div class="panel">
               <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                recusandae repellat nam molestias. Itaque, at! Voluptatem
-                necessitatibus, culpa nostrum harum ipsam illo dolor expedita,
-                itaque dolore quasi nulla minus! Fuga!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+
+            <button class="accordion">
+              Какие спецификации (размеры) комбо-багажника доступны для заказа?
+            </button>
+            <div class="panel">
+              <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+
+            <button class="accordion">
+              Из каких материалов делаются комбо-багажники?
+            </button>
+            <div class="panel">
+              <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+
+            <button class="accordion">Какой срок изготовления?</button>
+            <div class="panel">
+              <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+
+            <button class="accordion">Как проиходит доставка?</button>
+            <div class="panel">
+              <p class="text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
               </p>
             </div>
           </div>
         </div>
       </section>
+      <!-- FAQ -->
     </main>
 
-    <!-- Слайдер -->
+    <!-- СЛАЙДЕР JS -->
     <script src="/js/swiper-bundle.min.js"></script>
     <script>
       var mySwiper = new Swiper('.swiper-container', {
@@ -459,6 +546,8 @@
         },
       });
     </script>
+    <!-- СЛАЙДЕР JS -->
     <script src="/js/script.js"></script>
+    <script src="/js/accordion.js"></script>
   </body>
 </html>
