@@ -12,6 +12,10 @@
 }
 
 /* TYPOGRAPHY */
+.title-h3 {
+  margin-top: 00.5rem;
+}
+
 .title__col {
   display: flex;
   flex-direction: row;
@@ -23,12 +27,10 @@
   margin-bottom: 0.5rem;
   font-size: 25px;
 }
-/* .title-h2::after {
-  content: '';
-  display: block;
-  height: 5px;
-  background: linear-gradient(to left, rgba(240, 240, 240, 0), #000);
-} */
+
+.author-link {
+  text-decoration: none;
+}
 
 /* UTILITES */
 

@@ -19,6 +19,8 @@
     <!-- HEADER -->
     <header class="header container-fluid">
       <div class="row header__row">
+        <!-- H1 -->
+        <h1 class="visually-hidden">Багажник для велосипеда</h1>
         <!-- Язык -->
         <div class="col-3 header__col-lang">
           <button class="btn btn__lang">RU</button>
@@ -74,13 +76,7 @@
         <div class="col-3 header__col-btn">
           <button class="btn btn__chat">
             <span class="visually-hidden">Чат</span>
-            <img
-              class="header__icon-chat"
-              src="/img/icon__chat.svg"
-              alt=""
-              width="25px"
-              height="25px"
-            />
+            <span class="title-emoji">🤑</span>
           </button>
         </div>
       </div>
@@ -104,6 +100,7 @@
                   <a
                     href="https://www.instagram.com/brokenbikes.club/"
                     class="start__link start__link--bbc"
+                    target="_blank"
                   >
                     <img
                       class="test__img"
@@ -119,6 +116,7 @@
                   <a
                     href="https://www.instagram.com/papa_palka/"
                     class="start__link start__link--papa"
+                    target="_blank"
                   >
                     <img
                       class="test__img"
@@ -238,10 +236,12 @@
       <section class="video row--padding">
         <div class="container">
           <div class="row">
+            <!-- Заголовок -->
             <div class="col-12 title__col">
               <h2 class="title-h2">Видео</h2>
               <span class="title-emoji">🔥🔥🔥🔥</span>
             </div>
+            <!-- Видео -->
             <div class="col-12 col--no-padding">
               <video
                 src="/video/video__promo.mp4"
@@ -251,11 +251,31 @@
                 controls="true"
               ></video>
             </div>
+            <!-- Описание -->
             <div class="col-12">
               <p class="text">
-                Идея: 321 <br />
-                Райдер: Антон Бэнтфрейм <br />
-                Съемка/Монтаж: 123
+                Идея:
+                <a
+                  href="https://www.instagram.com/brokenbikes.club/"
+                  class="author-link"
+                  target="_blank"
+                  >@brokenbikes.club</a
+                ><br />
+                Райдер:
+                <a
+                  href="https://www.instagram.com/antonbentframe/"
+                  class="author-link"
+                  target="_blank"
+                  >@antonbentframe</a
+                >
+                <br />
+                Съемка/Монтаж:
+                <a
+                  href="https://www.instagram.com/100.400iso/"
+                  class="author-link"
+                  target="_blank"
+                  >@100.400iso
+                </a>
               </p>
             </div>
           </div>
@@ -263,57 +283,59 @@
       </section>
       <!-- ВИДЕО -->
 
+      <!-- О НАС -->
       <section class="about row--padding">
         <div class="container">
           <div class="row">
+            <!-- Заголовок -->
             <div class="col-12 title__col">
               <h2 class="title-h2">О нас</h2>
               <span class="title-emoji">👨‍🔧🧞👨‍💻🦸‍♂️</span>
             </div>
-
-            <div class="col-12 col-md-6">
-              <div class="col-12">
-                <img
-                  class="test__img"
-                  src="/img/test.jpg"
-                  alt=""
-                  srcset=""
-                  width="200px"
-                  height="200px"
-                />
-                <h3 class="title">Brokenbikes</h3>
-                <p class="text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Commodi recusandae repellat nam molestias. Itaque, at!
-                  Voluptatem necessitatibus, culpa nostrum harum ipsam illo
-                  dolor expedita, itaque dolore quasi nulla minus! Fuga!
-                </p>
-              </div>
+            <!-- ББС -->
+            <div class="col-12 col-md-6 row--padding">
+              <!-- Фото ББС -->
+              <img
+                class="test__img"
+                src="/img/test.jpg"
+                alt=""
+                width="200px"
+                height="200px"
+              />
+              <!-- Заголовок ББС -->
+              <h3 class="title-h3">BrokenBikes.Club</h3>
+              <!-- Описание ББС -->
+              <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+                recusandae repellat nam molestias. Itaque, at! Voluptatem
+                necessitatibus, culpa nostrum harum ipsam illo dolor expedita,
+                itaque dolore quasi nulla minus! Fuga!
+              </p>
             </div>
-            <div class="col-12 col-md-6">
-              <div class="row">
-                <div class="col-12">
-                  <img
-                    class="test__img"
-                    src="/img/test.jpg"
-                    alt=""
-                    srcset=""
-                    width="200px"
-                    height="200px"
-                  />
-                  <h3 class="title">Папа палка</h3>
-                  <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Commodi recusandae repellat nam molestias. Itaque, at!
-                    Voluptatem necessitatibus, culpa nostrum harum ipsam illo
-                    dolor expedita, itaque dolore quasi nulla minus! Fuga!
-                  </p>
-                </div>
-              </div>
+            <!-- ПАПА -->
+            <div class="col-12 col-md-6 row--padding">
+              <!-- Фото ПАПА -->
+              <img
+                class="test__img"
+                src="/img/test.jpg"
+                alt=""
+                width="200px"
+                height="200px"
+              />
+              <!-- Заголовок ПАПА -->
+              <h3 class="title-h3">Папа палка</h3>
+              <!-- Описание ПАПА -->
+              <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+                recusandae repellat nam molestias. Itaque, at! Voluptatem
+                necessitatibus, culpa nostrum harum ipsam illo dolor expedita,
+                itaque dolore quasi nulla minus! Fuga!
+              </p>
             </div>
           </div>
         </div>
       </section>
+      <!-- О НАС -->
 
       <section class="create">
         <div class="container">
