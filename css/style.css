@@ -2,6 +2,11 @@
 .start {
   padding-top: 60px;
 }
+@media screen and (min-width: 375px) {
+  .start {
+    padding-top: 65px;
+  }
+}
 
 .btn {
   background-color: #000;
@@ -9,6 +14,12 @@
   border: none;
   padding: 5px 10px;
   text-transform: uppercase;
+  font-size: 16px;
+}
+@media screen and (min-width: 375px) {
+  .btn {
+    font-size: 18px;
+  }
 }
 
 /* JIVOCHAT */
@@ -17,8 +28,42 @@
 }
 
 /* TYPOGRAPHY */
+.title-h2 {
+  font-size: 25px;
+}
+@media screen and (min-width: 375px) {
+  .title-h2 {
+    font-size: 30px;
+  }
+}
+
 .title-h3 {
   margin-top: 00.5rem;
+  font-size: 23px;
+}
+@media screen and (min-width: 375px) {
+  .title-h3 {
+    font-size: 25px;
+  }
+}
+
+.title-h4 {
+  font-size: 15px;
+}
+@media screen and (min-width: 375px) {
+  .title-h4 {
+    font-size: 18px;
+  }
+}
+
+.text {
+  text-align: justify;
+  font-size: 16px;
+}
+@media screen and (min-width: 375px) {
+  .text {
+    font-size: 18px;
+  }
 }
 
 .title__col {
@@ -48,6 +93,12 @@
   padding-top: 15px;
   padding-bottom: 15px;
 }
+@media screen and (min-width: 768px) {
+  .row--padding {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
 
 .container--padding {
   padding-left: 0;
@@ -67,20 +118,24 @@
   margin: -1px;
 }
 
-/* delete pls */
-.test__img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+/* Responsive */
+
+/* Responsive - Iphone 6/7/8 + X */
+@media screen and (min-width: 375px) {
 }
 
-.delete {
-  padding-top: 15px;
-  padding-bottom: 15px;
+/* Responsive - Iphone 6/7/8 Plus */
+@media screen and (min-width: 414px) {
 }
 
-.sub-title {
-  font-size: 15px;
+/* Responsive - Ipad */
+@media screen and (min-width: 768px) {
 }
 
-/*  */
+/* Responsive - Ipad Pro */
+@media screen and (min-width: 992px) {
+}
+
+/* Responsive - Desktop */
+@media screen and (min-width: 1200px) {
+}

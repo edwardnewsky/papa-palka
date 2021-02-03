@@ -25,7 +25,27 @@
   text-align: center;
 }
 
+/* Логотипы */
+@media screen and (min-width: 375px) {
+  .start__logo {
+    width: 75px;
+    height: 75px;
+  }
+}
+
 /* Слайдер */
+/* Слайдер - Картинки  */
+.swiper-slide__img {
+  object-fit: contain;
+}
+
+@media screen and (min-width: 375px) {
+  .swiper-slide__img {
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+  }
+}
 /* Слайдер - Стрелки */
 .swiper-button-prev {
   color: #000;
@@ -48,4 +68,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (min-width: 375px) {
+  .start__features-icon {
+    height: 40px;
+    width: 40px;
+  }
 }

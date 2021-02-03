@@ -1,0 +1,14 @@
+.video__col {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (min-width: 375px) {
+  .video__promo {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.video .text {
+  margin-top: 5px;
+}
