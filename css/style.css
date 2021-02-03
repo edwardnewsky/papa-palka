@@ -11,6 +11,25 @@
   text-transform: uppercase;
 }
 
+/* TYPOGRAPHY */
+.title__col {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-emoji {
+  margin-bottom: 0.5rem;
+  font-size: 25px;
+}
+/* .title-h2::after {
+  content: '';
+  display: block;
+  height: 5px;
+  background: linear-gradient(to left, rgba(240, 240, 240, 0), #000);
+} */
+
 /* UTILITES */
 
 .d-flex--center {
