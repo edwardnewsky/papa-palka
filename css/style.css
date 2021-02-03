@@ -11,6 +11,11 @@
   text-transform: uppercase;
 }
 
+/* JIVOCHAT */
+#jivo_chat_widget {
+  display: none;
+}
+
 /* TYPOGRAPHY */
 .title-h3 {
   margin-top: 00.5rem;

@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="/css/accordion.css" />
     <!-- FOOTER CSS -->
     <link rel="stylesheet" href="/css/footer.css" />
+    <!-- JIVOCHAT JS -->
+    <script src="//code-ya.jivosite.com/widget/jR7OR2K6Ib" async></script>
   </head>
   <body>
     <!-- HEADER -->
@@ -78,10 +80,12 @@
         </div>
         <!-- Чат -->
         <div class="col-3 header__col-btn">
-          <button class="btn btn__chat">
-            <span class="visually-hidden">Чат</span>
-            <span class="title-emoji">🤑</span>
-          </button>
+          <a href="javascript:void(0)" onclick="jivo_api.open(); return false;">
+            <button class="btn btn__chat">
+              <span class="visually-hidden">Чат</span>
+              <span class="title-emoji">🤑</span>
+            </button>
+          </a>
         </div>
       </div>
     </header>
@@ -227,7 +231,9 @@
               <!-- Кнопка купить -->
               <div class="row">
                 <div class="col-12 d-flex--center">
-                  <button class="btn">Покупить</button>
+                  <a href="javascript:void(0)" onclick="jivo_api.open(); return false;">
+                    <button class="btn">Покупить</button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -527,7 +533,9 @@
         </div>
         <!-- Кнопка "Купить" -->
         <div class="col-12 d-flex--center">
-          <button class="btn">Покупить</button>
+          <a href="javascript:void(0)" onclick="jivo_api.open(); return false;">
+            <button class="btn">Покупить</button>
+          </a>
         </div>
       </section>
       <!-- ВОПРОСЫ -->
