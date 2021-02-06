@@ -45,7 +45,7 @@
   margin-left: 5px;
 }
 
-.header__list {
+.nav__list {
   list-style: none;
   color: #fff;
   text-transform: uppercase;
@@ -57,16 +57,16 @@
   padding: 30px;
 }
 
-.header__list-item {
+.nav__list-item {
   opacity: 0.5;
   padding: 10px;
 }
 
-.header__list-item:hover {
+.nav__list-item:hover {
   opacity: 1;
 }
 
-.header__list-item:active {
+.nav__list-item:active {
   opacity: 1;
 }
 
