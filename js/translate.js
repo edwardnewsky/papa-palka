@@ -1,33 +1,64 @@
-'use strict';
+var LocaleManager = function (dictionary, options) {
+  options = options || {};
+  options.defaultLocale = LocaleManager.locales.ru;
 
-class LocaleManager {
-  static locales = { ru: 'ru', en: 'en' };
+  this.dictionary = dictionary;
+  this.defaultLocale = options.defaultLocale;
+  this.locale = this.defaultLocale;
 
-  constructor(defaultLocale = LocaleManager.locales.ru) {
-    this.defaultLocale = defaultLocale;
-    this.locale = this.defaultLocale;
-  }
+  this.applyLocale = this.applyLocale.bind(this);
+  this.toggle = this.toggle.bind(this);
+};
 
-  toggle = () => {
-    const nextLocale =
+LocaleManager.locales = { ru: 'ru', en: 'en' };
+
+LocaleManager.prototype = {
+  applyLocale(locale) {
+    var i18nElements = document.querySelectorAll('[data-i18n]');
+    var localization = this.dictionary[locale];
+
+    i18nElements.forEach((element) => {
+      var text = element.dataset.i18n
+        .split('.')
+        .reduce((acc, item) => acc[item], localization);
+
+      element.innerHTML = text;
+    });
+
+    this.locale = locale;
+  },
+  toggle() {
+    var nextLocale =
       this.locale === LocaleManager.locales.ru
         ? LocaleManager.locales.en
         : LocaleManager.locales.ru;
-    const i18nElements = document.querySelectorAll('[data-i18n]');
 
-    i18nElements.forEach((element) => {
-      const currentText = element.innerHTML;
-      const nextText = element.dataset[nextLocale];
-      // console.log(currentText, nextText, this.locale, nextLocale);
-      element.setAttribute(`data-${this.locale}`, currentText);
+    this.applyLocale(nextLocale);
+  },
+};
 
-      element.innerHTML = nextText;
-    });
+var dictionary = {};
 
-    this.locale = nextLocale;
-  };
-}
+dictionary[LocaleManager.locales.ru] = {
+  currentLanguage: 'Рус',
+  switchLanguage: 'Eng',
+  homePage: {
+    content: 'Лорем ипсум',
+  },
+};
 
-const locale = new LocaleManager();
+dictionary[LocaleManager.locales.en] = {
+  currentLanguage: 'Eng',
+  switchLanguage: 'Рус',
+  homePage: {
+    content: 'Lorem ipsum',
+  },
+};
 
-document.querySelector('.switch').addEventListener('click', locale.toggle);
+var localeManager = new LocaleManager(dictionary);
+
+document.addEventListener('DOMContentLoaded', () => {
+  document
+    .querySelector('.switch')
+    .addEventListener('click', localeManager.toggle);
+});
