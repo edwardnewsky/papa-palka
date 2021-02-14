@@ -1,0 +1,20 @@
+.photo__img {
+  margin: 6px 0;
+}
+@media screen and (min-width: 375px) {
+  .photo__img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .photo__img {
+    margin: 0;
+    padding: 10px;
+  }
+  .photo__col {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <!-- LIBS CSS -->
     <link rel="stylesheet" href="/css/libs/bootstrap-reboot.min.css" />
     <link rel="stylesheet" href="/css/libs/bootstrap-grid.min.css" />
@@ -14,40 +17,29 @@
     <link rel="stylesheet" href="/css/header.css" />
     <!-- START CSS -->
     <link rel="stylesheet" href="/css/start.css" />
+    <!-- VIDEO CSS -->
+    <link rel="stylesheet" href="/css/video.css">
+    <!-- ABOUT CSS -->
+    <link rel="stylesheet" href="/css/about.css">
+    <!-- PHOTO CSS -->
+    <link rel="stylesheet" href="/css/photo.css" />
+    <!-- ACCORDION CSS -->
+    <link rel="stylesheet" href="/css/accordion.css" />
+    <!-- FOOTER CSS -->
+    <link rel="stylesheet" href="/css/footer.css" />
+    <!-- JIVOCHAT JS -->
+    <script src="//code-ya.jivosite.com/widget/jR7OR2K6Ib" async></script>
   </head>
   <body>
     <!-- HEADER -->
     <header class="header container-fluid">
+      <div class="header__container container">
       <div class="row header__row">
+        <!-- H1 -->
+        <h1 class="visually-hidden">Багажник для велосипеда</h1>
         <!-- Язык -->
         <div class="col-3 header__col-lang">
-          <button class="btn btn__lang">RU</button>
-          <span class="header__lang-text">/</span>
-          <button class="btn btn__lang">EN</button>
-          <!-- <a
-            href="https://www.instagram.com/brokenbikes.club/"
-            class="header__logo-link header__logo-link--bbc d-none"
-          >
-            <img
-              class="header__logo-img"
-              src="/img/test.jpg"
-              alt=""
-              width="40px"
-              height="40px"
-            />
-          </a>
-          <a
-            href="https://www.instagram.com/papa_palka/"
-            class="header__logo-link header__logo-link--papa"
-          >
-            <img
-              class="header__logo-img"
-              src="/img/logo__papa-palka.svg"
-              alt=""
-              width="40px"
-              height="40px"
-            />
-          </a> -->
+          <button class="btn btn__lang switch" data-i18n="switchLanguage">Eng</button>
         </div>
         <!-- Навигация -->
         <div class="col-6 header__nav">
@@ -61,28 +53,25 @@
               height="auto"
             />
           </button>
-          <ul class="header__list d-none">
-            <li class="header__list-item">Велобагажник</li>
-            <li class="header__list-item">Видео</li>
-            <li class="header__list-item">О нас</li>
-            <li class="header__list-item">Фото</li>
-            <li class="header__list-item">Вопросы</li>
-            <li class="header__list-item">Заказать</li>
+          <ul class="nav__list d-none">
+            <li class="nav__list-item" data-i18n data-en="Cycle rack">Велобагажник</li>
+            <li class="nav__list-item" data-i18n data-en="Video">Видео</li>
+            <li class="nav__list-item" data-i18n data-en="About us">О нас</li>
+            <li class="nav__list-item" data-i18n data-en="Photo">Фото</li>
+            <li class="nav__list-item" data-i18n data-en="Questions">Вопросы</li>
+            <li class="nav__list-item" data-i18n data-en="Order">Заказать</li>
           </ul>
         </div>
         <!-- Чат -->
         <div class="col-3 header__col-btn">
-          <button class="btn btn__chat">
-            <span class="visually-hidden">Чат</span>
-            <img
-              class="header__icon-chat"
-              src="/img/icon__chat.svg"
-              alt=""
-              width="30px"
-              height="30px"
-            />
-          </button>
+          <a href="javascript:void(0)" onclick="jivo_api.open(); return false;">
+            <button class="btn btn__chat">
+              <span class="visually-hidden">Чат</span>
+              <span class="title-emoji">🤑</span>
+            </button>
+          </a>
         </div>
+      </div>
       </div>
     </header>
     <!-- HEADER -->
@@ -91,10 +80,142 @@
       <!-- START -->
       <section class="start container-fluid">
         <div class="row">
-          <!-- Желтый -->
-          <div class="fluid-bbc col-6"></div>
-          <!-- Оранжевый -->
-          <div class="fluid-papa col-6"></div>
+
+          <script id="2d-fragment-shader" type="x-shader/x-fragment">// <![CDATA[
+            #ifdef GL_ES
+            precision highp float;
+            #endif
+          
+            #define PI 3.14159265359;
+          
+            uniform vec2 u_resolution;
+            uniform vec2 u_mouse;
+            uniform float u_time;
+            uniform float u_xpos;
+            uniform float u_ypos;
+          
+          vec3 mod289(vec3 x) {
+            return x - floor(x * (1.0 / 289.0)) * 289.0;
+          }
+          
+          vec4 mod289(vec4 x) {
+            return x - floor(x * (1.0 / 289.0)) * 289.0;
+          }
+          
+          vec4 permute(vec4 x) {
+               return mod289(((x*34.0)+1.0)*x);
+          }
+          
+          vec4 taylorInvSqrt(vec4 r)
+          {
+            return 1.79284291400159 - 0.85373472095314 * r;
+          }
+          
+          float snoise(vec3 v)
+            { 
+            const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
+            const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);
+          
+            vec3 i  = floor(v + dot(v, C.yyy) );
+            vec3 x0 =   v - i + dot(i, C.xxx) ;
+          
+            vec3 g = step(x0.yzx, x0.xyz);
+            vec3 l = 1.0 - g;
+            vec3 i1 = min( g.xyz, l.zxy );
+            vec3 i2 = max( g.xyz, l.zxy );
+          
+            vec3 x1 = x0 - i1 + C.xxx;
+            vec3 x2 = x0 - i2 + C.yyy;
+            vec3 x3 = x0 - D.yyy;
+          
+            i = mod289(i); 
+            vec4 p = permute( permute( permute( 
+                       i.z + vec4(0.0, i1.z, i2.z, 1.0 ))
+                     + i.y + vec4(0.0, i1.y, i2.y, 1.0 )) 
+                     + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));
+          
+            float n_ = 0.142857142857;
+            vec3  ns = n_ * D.wyz - D.xzx;
+          
+            vec4 j = p - 49.0 * floor(p * ns.z * ns.z);
+          
+            vec4 x_ = floor(j * ns.z);
+            vec4 y_ = floor(j - 7.0 * x_ );
+          
+            vec4 x = x_ *ns.x + ns.yyyy;
+            vec4 y = y_ *ns.x + ns.yyyy;
+            vec4 h = 1.0 - abs(x) - abs(y);
+          
+            vec4 b0 = vec4( x.xy, y.xy );
+            vec4 b1 = vec4( x.zw, y.zw );
+          
+            vec4 s0 = floor(b0)*2.0 + 1.0;
+            vec4 s1 = floor(b1)*2.0 + 1.0;
+            vec4 sh = -step(h, vec4(0.0));
+          
+            vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ;
+            vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ;
+          
+            vec3 p0 = vec3(a0.xy,h.x);
+            vec3 p1 = vec3(a0.zw,h.y);
+            vec3 p2 = vec3(a1.xy,h.z);
+            vec3 p3 = vec3(a1.zw,h.w);
+          
+            vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
+            p0 *= norm.x;
+            p1 *= norm.y;
+            p2 *= norm.z;
+            p3 *= norm.w;
+          
+            vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
+            m = m * m;
+            return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1), 
+                                          dot(p2,x2), dot(p3,x3) ) );
+            }
+          
+            void main() {
+              vec3 color1 = vec3(75.0/255.0,144.0/255.0,210.0/255.0);
+              vec3 color2 = vec3(252.0/255.0,244.0/255.0,111.0/255.0);
+              vec3 color3 = vec3(244.0/255.0,238.0/255.0,87.0/255.0);
+              vec3 color4 = vec3(242.0/255.0,232.0/255.0,99.0/255.0);
+              vec3 color5 = vec3(242.0/255.0,205.0/255.0,96.0/255.0);
+              vec3 color6 = vec3(255.0/255.0,255.0/255.0,255.0/255.0);
+              vec2 lt = vec2(gl_FragCoord.x + u_xpos, gl_FragCoord.y + u_ypos);
+              vec2 st = lt.xy/u_resolution.xy;
+              st.x *= u_resolution.x/u_resolution.y;
+              vec3 color = vec3(0.0);
+              vec2 pos = vec2(st*0.6);
+              float DF = 0.0;
+              float a = 0.0;
+              vec2 vel = vec2(u_time*.1);
+              st.xy *= 0.4;
+              float r = snoise(vec3(st.x,st.y,u_time * 0.1));
+              
+            if(r > 0.60){
+              color = color5;
+            } else if(r > 0.20){
+              color = color4;
+            } else if(r > -0.20){
+              color = color3;
+            } else if(r > -0.60){
+              color = color2;
+            } else if(r > -2.0){
+              color = color1;
+            }
+              
+              gl_FragColor = vec4(color,1.0);
+            }
+          // ]]></script>
+          
+          <script id="2d-vertex-shader" type="x-shader/x-vertex">// <![CDATA[
+            attribute vec2 a_position;
+            void main() {
+              gl_Position = vec4(a_position, 0, 1);
+            }
+            // ]]></script>
+
+          <canvas id="glscreen" style="padding: 0;"></canvas>
+          
           <div class="start__fix col-12">
             <div class="container container--padding">
               <!-- Логотипы -->
@@ -104,10 +225,11 @@
                   <a
                     href="https://www.instagram.com/brokenbikes.club/"
                     class="start__link start__link--bbc"
+                    target="_blank"
                   >
                     <img
-                      class="test__img"
-                      src="/img/bbc-logo.png"
+                      class="start__logo start__logo--bbc"
+                      src="/img/logo__bbc.svg"
                       alt=""
                       width="70px"
                       height="70px"
@@ -119,10 +241,11 @@
                   <a
                     href="https://www.instagram.com/papa_palka/"
                     class="start__link start__link--papa"
+                    target="_blank"
                   >
                     <img
-                      class="test__img"
-                      src="/img/bbc-logo.png"
+                      class="start__logo start__logo--bbc"
+                      src="/img/logo__papa-palka.svg"
                       alt=""
                       width="70px"
                       height="70px"
@@ -135,10 +258,11 @@
                 <div class="col-12 d-flex--center swiper-container">
                   <!-- Обертка -->
                   <div class="swiper-wrapper">
-                    <!-- Слайд 1 -->
-                    <div class="swiper-slide d-flex--center">
+                     <!-- Слайд 1 -->
+                     <div class="swiper-slide d-flex--center">
                       <img
-                        src="/img/rack.png"
+                        class="swiper-slide__img"
+                        src="/img/rack/7.png"
                         alt=""
                         height="200px"
                         width="300px"
@@ -147,7 +271,8 @@
                     <!-- Слайд 2 -->
                     <div class="swiper-slide d-flex--center">
                       <img
-                        src="/img/rack.png"
+                        class="swiper-slide__img"
+                        src="/img/rack/8.png"
                         alt=""
                         height="200px"
                         width="300px"
@@ -156,7 +281,8 @@
                     <!-- Слайд 3 -->
                     <div class="swiper-slide d-flex--center">
                       <img
-                        src="/img/rack.png"
+                        class="swiper-slide__img"
+                        src="/img/rack/6.png"
                         alt=""
                         height="200px"
                         width="300px"
@@ -165,7 +291,48 @@
                     <!-- Слайд 4 -->
                     <div class="swiper-slide d-flex--center">
                       <img
-                        src="/img/rack.png"
+                        class="swiper-slide__img"
+                        src="/img/rack/5.png"
+                        alt=""
+                        height="200px"
+                        width="300px"
+                      />
+                    </div>
+                     <!-- Слайд 5 -->
+                     <div class="swiper-slide d-flex--center">
+                      <img
+                        class="swiper-slide__img"
+                        src="/img/rack/4.png"
+                        alt=""
+                        height="200px"
+                        width="300px"
+                      />
+                    </div>
+                     <!-- Слайд 6 -->
+                     <div class="swiper-slide d-flex--center">
+                      <img
+                        class="swiper-slide__img"
+                        src="/img/rack/3.png"
+                        alt=""
+                        height="200px"
+                        width="300px"
+                      />
+                    </div>
+                     <!-- Слайд 7 -->
+                     <div class="swiper-slide d-flex--center">
+                      <img
+                        class="swiper-slide__img"
+                        src="/img/rack/2.png"
+                        alt=""
+                        height="200px"
+                        width="300px"
+                      />
+                    </div>
+                     <!-- Слайд 8 -->
+                     <div class="swiper-slide d-flex--center">
+                      <img
+                        class="swiper-slide__img"
+                        src="/img/rack/1.png"
                         alt=""
                         height="200px"
                         width="300px"
@@ -184,48 +351,56 @@
                 <!-- Преимущество 1 -->
                 <div class="col-6 start__features">
                   <img
+                    class="start__features-icon"
                     src="/img/icon__cycle.svg"
                     alt=""
                     height="40px"
                     width="40px"
                   />
-                  <h3 class="sub-title">Дохуя стильный</h3>
+                  <h4 class="title-h4" data-i18n data-en="*******">Стильный</h4>
                 </div>
                 <!-- Преимущество 2 -->
                 <div class="col-6 start__features">
                   <img
+                    class="start__features-icon"
                     src="/img/icon__cart.svg"
                     alt=""
                     height="40px"
                     width="40px"
                   />
-                  <h3 class="sub-title">Дохуя способный</h3>
+                  <h4 class="title-h4" data-i18n data-en="*******">Способный</h4>
                 </div>
                 <!-- Преимущество 3 -->
                 <div class="col-6 start__features">
                   <img
+                    class="start__features-icon"
                     src="/img/icon__handlebars.svg"
                     alt=""
                     height="40px"
                     width="40px"
                   />
-                  <h3 class="sub-title">Дохуя кастомный</h3>
+                  <h4 class="title-h4" data-i18n data-en="*******">Кастомный</h4>
                 </div>
                 <!-- Преимущество 4 -->
                 <div class="col-6 start__features">
                   <img
+                    class="start__features-icon"
                     src="/img/icon__helmet.svg"
                     alt=""
                     height="40px"
                     width="40px"
                   />
-                  <h3 class="sub-title">Дохуя безопасный</h3>
+                  <h4 class="title-h4" data-i18n data-en="*******">Безопасный</h4>
                 </div>
               </div>
               <!-- Кнопка купить -->
               <div class="row">
                 <div class="col-12 d-flex--center">
-                  <button class="btn">Покупить</button>
+                  <span class="title-emoji title-emoji--btn">👉</span>
+                  <a href="javascript:void(0)" onclick="jivo_api.open(); return false;">
+                    <button class="btn btn__buy" data-i18n data-en="Order">Купить</button>
+                  </a>
+                  <span class="title-emoji title-emoji--btn">👈</span>
                 </div>
               </div>
             </div>
@@ -235,11 +410,19 @@
       <!-- START -->
 
       <!-- ВИДЕО -->
-      <section class="video">
+      <section class="video row--padding">
         <div class="container">
           <div class="row">
-            <div class="col-12 col--no-padding">
+            <!-- Заголовок -->
+            <div class="col-12 title__col">
+              <h2 class="title-h2" data-i18n data-en="Video">Видео</h2>
+              <span class="title-emoji">🔥🔥🔥🔥</span>
+            </div>
+            <!-- Видео -->
+            <div class="col-12 col--no-padding video__col">
               <video
+                poster="/img/video__poster.png"
+                class="video__promo"
                 src="/video/video__promo.mp4"
                 height="auto"
                 loop="true"
@@ -247,106 +430,88 @@
                 controls="true"
               ></video>
             </div>
+            <!-- Описание -->
+            <div class="col-12">
+              <p class="text">
+                <span class="video__description" data-i18n data-en="***">Идея</span>:
+                <a
+                  href="https://www.instagram.com/brokenbikes.club/"
+                  class="author-link"
+                  target="_blank"
+                  >@brokenbikes.club</a
+                ><br />
+                <span class="video__description" data-i18n data-en="Rider">Райдер</span>:
+                <a
+                  href="https://www.instagram.com/antonbentframe/"
+                  class="author-link"
+                  target="_blank"
+                  >@antonbentframe</a
+                >
+                <br />
+                <span class="video__description" data-i18n data-en="***">Съемка/Монтаж</span>:
+                <a
+                  href="https://www.instagram.com/100.400iso/"
+                  class="author-link"
+                  target="_blank"
+                  >@100.400iso
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </section>
       <!-- ВИДЕО -->
 
-      <section class="about">
+      <!-- О НАС -->
+      <section class="about row--padding">
         <div class="container">
           <div class="row">
-            <div class="col-12">
-              <h2 class="title">О нас</h2>
+            <!-- Заголовок -->
+            <div class="col-12 title__col">
+              <h2 class="title-h2" data-i18n data-en="About us">О нас</h2>
+              <span class="title-emoji">👨‍🔧🧞👨‍💻🦸‍♂️</span>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="row">
-                <div class="col-12">
-                  <img
-                    class="test__img"
-                    src="/img/test.jpg"
-                    alt=""
-                    srcset=""
-                    width="200px"
-                    height="200px"
-                  />
-                  <h3 class="title">Brokenbikes</h3>
-                  <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Commodi recusandae repellat nam molestias. Itaque, at!
-                    Voluptatem necessitatibus, culpa nostrum harum ipsam illo
-                    dolor expedita, itaque dolore quasi nulla minus! Fuga!
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="row">
-                <div class="col-12">
-                  <img
-                    class="test__img"
-                    src="/img/test.jpg"
-                    alt=""
-                    srcset=""
-                    width="200px"
-                    height="200px"
-                  />
-                  <h3 class="title">Папа палка</h3>
-                  <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Commodi recusandae repellat nam molestias. Itaque, at!
-                    Voluptatem necessitatibus, culpa nostrum harum ipsam illo
-                    dolor expedita, itaque dolore quasi nulla minus! Fuga!
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="create">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <h2 class="title">Производство</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 col-md-4">
+            <!-- ББС -->
+            <div class="about__col col-12 col-md-6 row--padding">
+              <!-- Фото ББС -->
               <img
-                class="test__img"
-                src="/img/test.jpg"
+                class="about__photo about__photo--bbc"
+                src="/img/photo__bbc.jpg"
                 alt=""
-                srcset=""
-                width="200px"
-                height="200px"
+                width="296px"
+                height="197.5px"
               />
+              <!-- Заголовок ББС -->
+              <a
+                href="https://www.instagram.com/brokenbikes.club/"
+                class="author-link"
+                target="_blank"
+                ><h3 class="title-h3">BrokenBikes.Club</h3></a
+              >
+              <!-- Описание ББС -->
+              <p class="text about__description" data-i18n data-en="*******">
+                Все началось в Сочи в 2018 году,  когда мы компанией друзей впервые поехали в путешествие на байках.  Каждый из нас ломался по несколько раз, мы подшучивали над поломками друг друга и снимали видео об этом. Так появился  «Клуб сломанных велосипедов», как сатира над вело снобизмом с большой долей самоиронии.  Сломанное уже не сломать.
+              </p>
             </div>
-            <div class="col-12 col-md-4">
+            <!-- ПАПА -->
+            <div class="about__col col-12 col-md-6 row--padding">
+              <!-- Фото ПАПА -->
               <img
-                class="test__img"
-                src="/img/test.jpg"
+                class="about__photo about__photo--bbc"
+                src="/img/photo__bbc.jpg"
                 alt=""
-                srcset=""
-                width="200px"
-                height="200px"
+                width="296px"
+                height="197.5px"
               />
-            </div>
-            <div class="col-12 col-md-4">
-              <img
-                class="test__img"
-                src="/img/test.jpg"
-                alt=""
-                srcset=""
-                width="200px"
-                height="200px"
-              />
-            </div>
-            <div class="col-12">
-              <h3 class="title">О Производстве</h3>
-              <p class="text">
+              <!-- Заголовок ПАПА -->
+              <a
+                href="https://www.instagram.com/papa_palka/"
+                class="author-link"
+                target="_blank"
+                ><h3 class="title-h3">Папа палка</h3></a
+              >
+              <!-- Описание ПАПА -->
+              <p class="text about__description" data-i18n data-en="******">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
                 recusandae repellat nam molestias. Itaque, at! Voluptatem
                 necessitatibus, culpa nostrum harum ipsam illo dolor expedita,
@@ -356,60 +521,346 @@
           </div>
         </div>
       </section>
+      <!-- О НАС -->
 
-      <section class="prod">
+      <!-- ФОТО -->
+      <section class="photo row--padding">
         <div class="container">
           <div class="row">
-            <div class="col-12">
-              <h2 class="title">Производство</h2>
+            <!-- Заголовок -->
+            <div class="col-12 title__col">
+              <h2 class="title-h2" data-i18n data-en="Photo">Фото</h2>
+              <span class="title-emoji">📸📹🎞️🚴</span>
             </div>
           </div>
+          <!-- Фото блок -->
+          <div class="photo__col col-12 row--padding">
+            <!-- Фото 1 -->
+            <div class="col-12 col-md-4">
+              <img
+                class="photo__img"
+                src="/img/photo__1.jpg"
+                alt=""
+                width="296px"
+                height="197.5px"
+              />
+            </div>
+            <!-- Фото 2 -->
+            <div class="col-12 col-md-4">
+              <img
+                class="photo__img"
+                src="/img/photo__2.jpg"
+                alt=""
+                width="296px"
+                height="197.5px"
+              />
+            </div>
+            <!-- Фото 3 -->
+            <div class="col-12 col-md-4">
+              <img
+                class="photo__img"
+                src="/img/photo__3.jpg"
+                alt=""
+                width="296px"
+                height="197.5px"
+              />
+            </div>
+            <!-- Фото 4 -->
+            <div class="col-12 col-md-4">
+              <video
+                class="photo__img"
+                src="/video/video__1.mp4"
+                height="auto"
+                loop="true"
+                width="296px"
+                height="197.5px"
+                controls
+                autoplay
+                muted
+              ></video>
+              <!-- <img
+                class="photo__img"
+                src="/img/test.jpg"
+                alt=""
+                width="296px"
+                height="197.5px"
+              /> -->
+            </div>
+            <!-- Фото 5 -->
+            <div class="col-12 col-md-4">
+              <video
+                class="photo__img"
+                src="/video/video__2.mp4"
+                height="auto"
+                loop="true"
+                width="296px"
+                height="296px"
+                controls
+                autoplay
+                muted
+              ></video>
+              <!-- <img
+                class="photo__img"
+                src="/img/test.jpg"
+                alt=""
+                width="296px"
+                height="197.5px"
+              /> -->
+            </div>
+            <!-- Фото 6 -->
+            <div class="col-12 col-md-4">
+              <video
+                class="photo__img"
+                src="/video/video__3.mp4"
+                height="auto"
+                loop="true"
+                width="296px"
+                height="197.5px"
+                controls
+                autoplay
+                muted
+              ></video>
+              <!-- <img
+                class="photo__img"
+                src="/img/test.jpg"
+                alt=""
+                width="296px"
+                height="197.5px"
+              /> -->
+            </div>
+            
+          </div>
+        </div>
+      </section>
+      <!-- ФОТО -->
+
+      <!-- ВОПРОСЫ -->
+      <section class="faq row--padding">
+        <div class="container">
           <div class="row">
-            <div class="col-12 col-md-4">
-              <img
-                class="test__img"
-                src="/img/test.jpg"
-                alt=""
-                srcset=""
-                width="200px"
-                height="200px"
-              />
+            <!-- Заголовок -->
+            <div class="col-12 title__col">
+              <h2 class="title-h2" data-i18n data-en="Questions">Вопросы</h2>
+              <span class="title-emoji">⁉️📚🧭🧐</span>
             </div>
-            <div class="col-12 col-md-4">
-              <img
-                class="test__img"
-                src="/img/test.jpg"
-                alt=""
-                srcset=""
-                width="200px"
-                height="200px"
-              />
+          </div>
+          <!-- Аккордион блок -->
+          <div class="col-12 row--padding">
+            <button class="accordion question" data-i18n data-en="****">
+              Как купить, кому платить, где заказывать?
+            </button>
+            <div class="panel">
+              <p class="text answer" data-i18n data-en="***">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
             </div>
-            <div class="col-12 col-md-4">
-              <img
-                class="test__img"
-                src="/img/test.jpg"
-                alt=""
-                srcset=""
-                width="200px"
-                height="200px"
-              />
+
+            <button class="accordion question" data-i18n data-en="***">
+              Какие спецификации (размеры) комбо-багажника доступны для заказа?
+            </button>
+            <div class="panel">
+              <p class="text answer">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
             </div>
-            <div class="col-12">
-              <h3 class="title">О Производстве</h3>
-              <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                recusandae repellat nam molestias. Itaque, at! Voluptatem
-                necessitatibus, culpa nostrum harum ipsam illo dolor expedita,
-                itaque dolore quasi nulla minus! Fuga!
+
+            <button class="accordion question" data-i18n data-en="***">
+              Из каких материалов делаются комбо-багажники?
+            </button>
+            <div class="panel">
+              <p class="text answer" data-i18n data-en="***">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+
+            <button class="accordion question" data-i18n data-en="***">Какой срок изготовления?</button>
+            <div class="panel">
+              <p class="text answer">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+
+            <button class="accordion question" data-i18n data-en="***">Как проиходит доставка?</button>
+            <div class="panel">
+              <p class="text answer">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
               </p>
             </div>
           </div>
         </div>
+        <!-- Кнопка "Купить" -->
+        <div class="col-12 d-flex--center">
+          <span class="title-emoji title-emoji--btn">👉</span>
+          <a href="javascript:void(0)" onclick="jivo_api.open(); return false;">
+            <button class="btn btn__buy" data-i18n data-en="Order">Купить</button>
+          </a>
+          <span class="title-emoji title-emoji--btn">👈</span>
+        </div>
       </section>
+      <!-- ВОПРОСЫ -->
     </main>
 
-    <!-- Слайдер -->
+    <!-- ФУТЕР -->
+    <footer class="footer container-fluid">
+      <div class="container">
+        <div class="row footer__row">
+          <!-- ББС -->
+          <div class="col-6 footer__col--bbc">
+            <!-- Лого -->
+            <a
+              href="https://www.instagram.com/brokenbikes.club/"
+              class="start__link start__link--bbc"
+              target="_blank"
+            >
+              <img
+                class="footer__social-logo footer__social-logo--bbc"
+                src="/img/logo__bbc.svg"
+                alt=""
+                width="30px"
+                height="30px"
+              />
+            </a>
+            <!-- Инст -->
+            <a
+              href="https://www.instagram.com/papa_palka/"
+              class="start__link start__link--bbc"
+              target="_blank"
+            >
+              <img
+                class="footer__social footer__social--bbc"
+                src="/img/icon__inst.svg"
+                alt=""
+                width="25px"
+                height="25px"
+              />
+            </a>
+            <!-- Фейсбук -->
+            <a
+              href="https://www.instagram.com/papa_palka/"
+              class="start__link start__link--bbc"
+              target="_blank"
+            >
+              <img
+                class="footer__social footer__social--bbc"
+                src="/img/icon__fb.svg"
+                alt=""
+                width="25px"
+                height="25px"
+              />
+            </a>
+            <!-- Вконтакте -->
+            <a
+              href="https://www.instagram.com/papa_palka/"
+              class="start__link start__link--bbc"
+              target="_blank"
+            >
+              <img
+                class="footer__social footer__social--bbc"
+                src="/img/icon__vk.svg"
+                alt=""
+                width="25px"
+                height="25px"
+              />
+            </a>
+            <!-- Телеграм -->
+            <a
+              href="https://www.instagram.com/papa_palka/"
+              class="start__link start__link--bbc"
+              target="_blank"
+            >
+              <img
+                class="footer__social footer__social--bbc"
+                src="/img/icon__tg.svg"
+                alt=""
+                width="25px"
+                height="25px"
+              />
+            </a>
+            <!-- ТикТок -->
+            <a
+              href="https://www.instagram.com/papa_palka/"
+              class="start__link start__link--bbc"
+              target="_blank"
+            >
+              <img
+                class="footer__social footer__social--bbc"
+                src="/img/icon__tiktok.svg"
+                alt=""
+                width="25px"
+                height="25px"
+              />
+            </a>
+          </div>
+          
+          <!-- ПАПА -->
+          <div class="col-6 footer__col--papa">
+            <!-- Лого -->
+            <a
+              href="https://www.instagram.com/papa_palka/"
+              class="start__link start__link--papa"
+              target="_blank"
+            >
+              <img
+                class="footer__social-logo footer__social-logo--papa"
+                src="/img/logo__papa-palka.svg"
+                alt=""
+                width="30px"
+                height="30px"
+              />
+            </a>
+            <!-- Инст -->
+            <a
+              href="https://www.instagram.com/papa_palka/"
+              class="start__link start__link--papa"
+              target="_blank"
+            >
+              <img
+                class="footer__social footer__social--papa"
+                src="/img/icon__inst.svg"
+                alt=""
+                width="25px"
+                height="25px"
+              />
+            </a>
+            <!-- Вконтакте -->
+            <a
+              href="https://www.instagram.com/papa_palka/"
+              class="start__link start__link--papa"
+              target="_blank"
+            >
+              <img
+                class="footer__social footer__social--papa"
+                src="/img/icon__vk.svg"
+                alt=""
+                width="25px"
+                height="25px"
+              />
+            </a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ФУТЕР -->
+
+    <!-- BACKGROUND JS -->
+    <script src="/js/background.js"></script>
+    <!-- СЛАЙДЕР JS -->
     <script src="/js/swiper-bundle.min.js"></script>
     <script>
       var mySwiper = new Swiper('.swiper-container', {
@@ -428,6 +879,13 @@
         },
       });
     </script>
+    <!-- МЕНЮ JS -->
+    <script src="/js/menu.js"></script>
+    <!-- JIVOSITE JS -->
     <script src="/js/script.js"></script>
+    <!-- АККОРДИОН JS -->
+    <script src="/js/accordion.js"></script>
+    <!-- ПЕРЕВОД JS -->
+    <script src="/js/translate.js"></script>
   </body>
 </html>

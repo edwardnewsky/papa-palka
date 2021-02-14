@@ -1,0 +1,36 @@
+.footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #000;
+}
+
+.footer__row {
+  display: flex;
+  align-items: center;
+}
+
+.footer__col--bbc {
+  display: inherit;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer__col--papa {
+  display: inherit;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer__social {
+  padding-left: 5px;
+}
+@media screen and (min-width: 375px) {
+  .footer__social-logo {
+    width: 40px;
+    height: 40px;
+  }
+  .footer__social {
+    width: 30px;
+    height: 30px;
+  }
+}
