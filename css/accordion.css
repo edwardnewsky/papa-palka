@@ -38,3 +38,19 @@
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
+
+.answer {
+  padding-left: 10px;
+}
+.answer__list-item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.answer__list-item--first {
+  margin-top: 0;
+}
+
+.answer__list-item--last {
+  margin-bottom: 0;
+}
