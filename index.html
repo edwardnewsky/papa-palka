@@ -60,16 +60,35 @@
               />
             </button>
             <ul class="nav__list d-none">
-              <li class="nav__list-item" data-i18n data-en="Combo rack">
-                Комбо багажник
-              </li>
-              <li class="nav__list-item" data-i18n data-en="Video">Видео</li>
-              <li class="nav__list-item" data-i18n data-en="About us">О нас</li>
-              <li class="nav__list-item" data-i18n data-en="Review">Обзор</li>
-              <li class="nav__list-item" data-i18n data-en="Questions">
-                Вопросы
-              </li>
-              <li class="nav__list-item" data-i18n data-en="Order">Заказать</li>
+              <a href="#start">
+                <li class="nav__list-item" data-i18n data-en="Combo rack">
+                  Комбо багажник
+                </li>
+              </a>
+              <a href="#video">
+                <li class="nav__list-item" data-i18n data-en="Video">Видео</li>
+              </a>
+              <a href="#about">
+                <li class="nav__list-item" data-i18n data-en="About us">
+                  О нас
+                </li>
+              </a>
+              <a href="#review">
+                <li class="nav__list-item" data-i18n data-en="Review">Обзор</li>
+              </a>
+              <a href="#questions">
+                <li class="nav__list-item" data-i18n data-en="Questions">
+                  Вопросы
+                </li>
+              </a>
+              <a
+                href="javascript:void(0)"
+                onclick="jivo_api.open(); return false;"
+              >
+                <li class="nav__list-item" data-i18n data-en="Order">
+                  Заказать
+                </li>
+              </a>
             </ul>
           </div>
           <!-- Чат -->
@@ -91,14 +110,14 @@
 
     <main class="main">
       <!-- START -->
-      <section class="start container-fluid">
+      <section class="start container-fluid" id="start">
         <div class="row">
           <canvas id="glscreen" style="padding: 0"></canvas>
           <!-- Контент -->
           <div class="start__fix col-12">
             <div class="container container--padding">
               <!-- Логотипы -->
-              <div class="row row--padding">
+              <div class="row row--padding row__logo">
                 <!-- ББС -->
                 <div class="start__col col-6">
                   <a
@@ -233,8 +252,8 @@
                     class="start__features-icon"
                     src="/img/icon__cycle.svg"
                     alt=""
-                    height="40px"
-                    width="40px"
+                    height="30px"
+                    width="30px"
                   />
                   <h4 class="title-h4" data-i18n data-en="*******">Стильный</h4>
                 </div>
@@ -244,8 +263,8 @@
                     class="start__features-icon"
                     src="/img/icon__cart.svg"
                     alt=""
-                    height="40px"
-                    width="40px"
+                    height="30px"
+                    width="30px"
                   />
                   <h4 class="title-h4" data-i18n data-en="*******">
                     Способный
@@ -257,8 +276,8 @@
                     class="start__features-icon"
                     src="/img/icon__handlebars.svg"
                     alt=""
-                    height="40px"
-                    width="40px"
+                    height="30px"
+                    width="30px"
                   />
                   <h4 class="title-h4" data-i18n data-en="*******">
                     Кастомный
@@ -270,8 +289,8 @@
                     class="start__features-icon"
                     src="/img/icon__helmet.svg"
                     alt=""
-                    height="40px"
-                    width="40px"
+                    height="30px"
+                    width="30px"
                   />
                   <h4 class="title-h4" data-i18n data-en="*******">
                     Безопасный
@@ -300,7 +319,7 @@
       <!-- START -->
 
       <!-- ВИДЕО -->
-      <section class="video row--padding">
+      <section class="video row--padding" id="video">
         <div class="container">
           <div class="row">
             <!-- Заголовок -->
@@ -359,7 +378,7 @@
       <!-- ВИДЕО -->
 
       <!-- О НАС -->
-      <section class="about row--padding">
+      <section class="about row--padding" id="about">
         <div class="container">
           <div class="row">
             <!-- Заголовок -->
@@ -428,7 +447,7 @@
       <!-- О НАС -->
 
       <!-- ОБЗОР -->
-      <section class="photo row--padding">
+      <section class="photo row--padding" id="review">
         <div class="container">
           <div class="row">
             <!-- Заголовок -->
@@ -568,7 +587,7 @@
       <!-- ОБЗОР -->
 
       <!-- ВОПРОСЫ -->
-      <section class="faq row--padding">
+      <section class="faq row--padding" id="questions">
         <div class="container">
           <div class="row">
             <!-- Заголовок -->

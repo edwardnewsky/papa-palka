@@ -3,15 +3,6 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.start {
-  padding-top: 60px;
-}
-@media screen and (min-width: 375px) {
-  .start {
-    padding-top: 65px;
-  }
-}
-
 .btn {
   background-color: #000;
   color: #fff;
@@ -101,8 +92,14 @@ body {
 }
 
 .row--padding {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+@media screen and (min-width: 414px) {
+  .row--padding {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
 }
 @media screen and (min-width: 768px) {
   .row--padding {
